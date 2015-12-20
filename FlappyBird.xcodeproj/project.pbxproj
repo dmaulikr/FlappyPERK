@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		252FBB571C240145009834D8 /* AppsaholicHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252FBB561C240145009834D8 /* AppsaholicHelper.swift */; };
+		25A851A11C2644CE00804A3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25A851A01C2644CE00804A3A /* LaunchScreen.storyboard */; };
 		43745200193D163700654986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437451FF193D163700654986 /* AppDelegate.swift */; };
 		43745202193D163700654986 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 43745201193D163700654986 /* GameScene.sks */; };
 		43745204193D163800654986 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43745203193D163800654986 /* GameScene.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		252FBB531C240018009834D8 /* FlappyBird-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlappyBird-Bridging-Header.h"; sourceTree = "<group>"; };
 		252FBB561C240145009834D8 /* AppsaholicHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsaholicHelper.swift; sourceTree = "<group>"; };
+		25A851A01C2644CE00804A3A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		437451FA193D163700654986 /* FlappyBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		437451FE193D163700654986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		437451FF193D163700654986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		437451FC193D163700654986 /* FlappyBird */ = {
 			isa = PBXGroup;
 			children = (
+				25A851A01C2644CE00804A3A /* LaunchScreen.storyboard */,
 				252FBB561C240145009834D8 /* AppsaholicHelper.swift */,
 				437451FF193D163700654986 /* AppDelegate.swift */,
 				43745201193D163700654986 /* GameScene.sks */,
@@ -201,6 +204,7 @@
 				TargetAttributes = {
 					437451F9193D163700654986 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = JQPF5STAQX;
 					};
 					4374520F193D163800654986 = {
 						CreatedOnToolsVersion = 6.0;
@@ -235,6 +239,7 @@
 				4374520B193D163800654986 /* Images.xcassets in Resources */,
 				43745202193D163700654986 /* GameScene.sks in Resources */,
 				437A3DBA193D326A00909BA0 /* bird.atlas in Resources */,
+				25A851A11C2644CE00804A3A /* LaunchScreen.storyboard in Resources */,
 				43745209193D163800654986 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,9 +414,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alvin Varghese (7DKQEBKHHY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alvin Varghese (7DKQEBKHHY)";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = FlappyBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.fullstack.FlappyBirddd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9b0399de-b7a1-496f-9af9-4a9e8f596a78";
 				SWIFT_OBJC_BRIDGING_HEADER = "FlappyBird-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -424,9 +434,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alvin Varghese (7DKQEBKHHY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alvin Varghese (7DKQEBKHHY)";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = FlappyBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.fullstack.FlappyBirddd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9b0399de-b7a1-496f-9af9-4a9e8f596a78";
 				SWIFT_OBJC_BRIDGING_HEADER = "FlappyBird-Bridging-Header.h";
 			};
 			name = Release;

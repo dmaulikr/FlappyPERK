@@ -8,6 +8,17 @@
 
 import SpriteKit
 
+enum KEYS : String
+{
+    case DUMMY_API_KEY = "daee393f1b55f99f410c17259172fef9db7b2480"
+    case DUMMY_EVENT_KEY = "102baba4474a87b8075b65e8aae2473ca510b3b4"
+    
+    case ORIGINAL_API_KEY = "a"
+    case ORIGINAL_EVENT_KEY = "s"
+}
+
+
+
 class GameScene : SKScene, SKPhysicsContactDelegate {
     let verticalPipeGap = 150.0
     
@@ -16,7 +27,6 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     var skyColor:SKColor!
     var pipeTextureUp:SKTexture!
     var pipeTextureDown:SKTexture!
-    var perkLifeTexture:SKTexture!
     var movePipesAndRemove:SKAction!
     var moving:SKNode!
     var pipes:SKNode!
@@ -29,6 +39,8 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
     let pipeCategory: UInt32 = 1 << 2
     let scoreCategory: UInt32 = 1 << 3
     let perkStarCatogory: UInt32 = 1 << 4
+    
+    let appsaholicSDKInstance : AppsaholicSDK = AppsaholicSDK.sharedManager() as! AppsaholicSDK
     
     override func didMoveToView(view: SKView) {
         
@@ -87,10 +99,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
         pipeTextureUp.filteringMode = .Linear
         pipeTextureDown = SKTexture(imageNamed: "appsa")
         pipeTextureDown.filteringMode = .Linear
-        
-        perkLifeTexture = SKTexture(imageNamed: "perk")
-        perkLifeTexture.filteringMode = .Nearest
-        
+                
         // create the pipes movement actions
         let distanceToMove = CGFloat(self.frame.size.width + 2.0 * pipeTextureUp.size().width)
         let movePipes = SKAction.moveByX(-distanceToMove, y:0.0, duration:NSTimeInterval(0.01 * distanceToMove))
@@ -284,17 +293,18 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
                 // Bird has contact with score entity
                 score++
                 
-                if score / 4 == 0
+                if score % 3 == 0
                 {
-                    if let uuid = UIDevice.currentDevice().identifierForVendor?.UUIDString
+                    if let controller = UIApplication.sharedApplication().keyWindow?.rootViewController
                     {
-                        appsaholicSDKInstance.trackEvent("d4318cdb6e752b7b026fd222cbf18c24de2a32ab", withSubID: uuid , notificationType: false, withController: appsaholicSDKInstance.appsaholic_rootViewController ) { success, value , number in
+                        self.appsaholicSDKInstance.appsaholic_rootViewController = controller
+                        
+                        self.appsaholicSDKInstance.trackEvent(KEYS.DUMMY_EVENT_KEY.rawValue, withSubID: NSUUID().UUIDString, notificationType: false, withController: controller, withSuccess: { success, value, number in
                             
-                            print("success : \(success)")
+                            print("Success : \(success)")
                             
-                        }
+                        })
                     }
-                    
                 }
                 
                 scoreLabelNode.text = String(score)
@@ -320,8 +330,8 @@ class GameScene : SKScene, SKPhysicsContactDelegate {
                     self.canRestart = true
                 })]), withKey: "flash")
             }
+        
         }
-        
-        
+
     }
 }

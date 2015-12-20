@@ -70,6 +70,13 @@ class GameViewController: UIViewController {
             return UIInterfaceOrientationMask.All
         }
     }
+    
+    //MARK: Status Bar Section
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
